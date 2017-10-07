@@ -1,5 +1,6 @@
 from checkio.elementary.most_wanted_letter import checkio
 
+
 def test_checkio():
     assert checkio("Hello World!") == "l", "Hello test"
     assert checkio("How do you do?") == "o", "O is most wanted"
