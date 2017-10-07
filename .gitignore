@@ -1,0 +1,13 @@
+__pycache__
+*.pyx
+
+/.cache
+/.eggs
+/.tox
+/.mypy_cache
+/**/*.egg-info
+
+/.vscode
+
+/dist
+/build
