@@ -6,11 +6,7 @@ LOWER_CHARS = set(string.ascii_lowercase)
 UPPER_CHARS = set(string.ascii_uppercase)
 
 
-def _has_minimal_length(password: str):
-    return len(password) >= MINIMAL_LENGTH
-
-
-def checkio(password: str):
+def checkio(password: str) -> bool:
     password_characters = set(password)
     return (len(password) >= MINIMAL_LENGTH
             and (not password_characters.isdisjoint(DIGITS))

@@ -3,7 +3,7 @@ import operator
 import string
 
 
-def checkio(text: str):
+def checkio(text: str) -> str:
     only_letters = (char.lower() for char in text
                     if char in string.ascii_letters)
     counter = collections.Counter(only_letters)
