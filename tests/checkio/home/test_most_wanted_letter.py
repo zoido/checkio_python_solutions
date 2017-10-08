@@ -1,4 +1,4 @@
-from checkio.elementary.most_wanted_letter import checkio
+from checkio.home.most_wanted_letter import checkio
 
 
 def test_checkio():

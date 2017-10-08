@@ -1,4 +1,4 @@
-from checkio.elementary.monkey_typing import count_words
+from checkio.home.monkey_typing import count_words
 
 
 def test_checkio():

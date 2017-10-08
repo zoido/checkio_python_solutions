@@ -1,4 +1,4 @@
-from checkio.elementary.house_password import checkio
+from checkio.home.house_password import checkio
 
 
 def test_checkio():

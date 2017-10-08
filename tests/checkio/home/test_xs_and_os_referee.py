@@ -1,4 +1,4 @@
-from checkio.elementary.xs_and_os_referee import checkio
+from checkio.home.xs_and_os_referee import checkio
 
 
 def test_checkio():

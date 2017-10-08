@@ -1,4 +1,4 @@
-from checkio.elementary.nonunique_elements import checkio
+from checkio.home.nonunique_elements import checkio
 
 
 def test_checkio():
