@@ -1,3 +1,3 @@
 # zoido's checkio
 
-My Python solutions to https://checkio.org/
+[My Python CheckiO solutions](https://py.checkio.org/user/zoido/)
