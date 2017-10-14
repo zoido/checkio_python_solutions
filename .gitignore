@@ -1,14 +1,18 @@
+# python cache files
 __pycache__
 *.pyx
 
+# test and build
 /.cache
 /.eggs
 /.tox
 /.mypy_cache
 /**/*.egg-info
 /.coverage
-
-/.vscode
-
 /dist
 /build
+.hypothesis
+
+# editor configs
+/.vscode
+
