@@ -6,6 +6,7 @@ __pycache__
 /.tox
 /.mypy_cache
 /**/*.egg-info
+/.coverage
 
 /.vscode
 
