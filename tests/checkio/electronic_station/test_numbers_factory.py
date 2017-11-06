@@ -1,19 +1,4 @@
-import functools
-import operator
-
-import hypothesis
-from hypothesis import strategies
-
-from checkio.electronic_station.numbers_factory import checkio, find_factors
-
-
-@hypothesis.given(number=strategies.integers(min_value=10))
-def test_find_factors(number):
-    # when
-    result = find_factors(number)
-
-    # then
-    assert functools.reduce(operator.mul, result) == number
+from checkio.electronic_station.numbers_factory import checkio
 
 
 def test_checkio():

@@ -1,4 +1,4 @@
-from typing import Generator, Iterable
+from typing import Generator
 
 
 def find_factors(number: int) -> Generator[int, None, None]:
@@ -11,26 +11,16 @@ def find_factors(number: int) -> Generator[int, None, None]:
                 divided = True
                 yield digit
                 break
-        if n < 10 or not divided:
+        if n < 10:
             yield n
             break
-
-
-def compress_factors(factors: Iterable[int]) -> Iterable[int]:
-    result = []
-    accumulator = 1
-    for f in list(factors):
-        if f > 9:
-            return [0]
-        accumulator *= f
-        if accumulator > 9:
-            result.append(accumulator // f)
-            accumulator = f
-    result.append(accumulator)
-    return result
+        if not divided:
+            raise ValueError("No reasonable factors can be found.")
 
 
 def checkio(number: int) -> int:
-    factors = sorted(find_factors(number))
-    compressed_factors = compress_factors(factors)
-    return int("".join(str(_) for _ in sorted(compressed_factors)))
+    try:
+        factors = sorted(find_factors(number))
+        return int("".join(str(_) for _ in sorted(factors)))
+    except ValueError:
+        return 0

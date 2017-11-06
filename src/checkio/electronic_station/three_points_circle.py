@@ -43,6 +43,7 @@ def find_the_order(point_a: Point, point_b: Point,
             return pa, pb, pc
     raise ValueError("Circle cannot be constructed.")  # pragma: no cover
 
+
 def format_coordinate(number: decimal.Decimal) -> str:
     """Returns decimal in the format required by task.
 
