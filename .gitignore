@@ -7,7 +7,7 @@ __pycache__
 /.coverage
 /.eggs
 /.hypothesis
-/.mypy_cache
+/**/.mypy_cache
 /.pytest_cache
 /.tox
 /**/*.egg-info
