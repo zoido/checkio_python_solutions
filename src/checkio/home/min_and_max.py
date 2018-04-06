@@ -16,9 +16,9 @@ def find_extreme(compare_operator, *args, **kwargs):
     return smallest_item
 
 
-def min(*args, **kwargs):
+def min(*args, **kwargs):  # noqa: A001 (needed by definition)
     return find_extreme(operator.lt, *args, **kwargs)
 
 
-def max(*args, **kwargs):
+def max(*args, **kwargs):  # noqa: A001 (needed by definition)
     return find_extreme(operator.gt, *args, **kwargs)
