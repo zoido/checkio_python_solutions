@@ -4,14 +4,15 @@ __pycache__
 
 # test and build
 /.cache
-/.eggs
-/.tox
-/.mypy_cache
-/**/*.egg-info
 /.coverage
-/dist
+/.eggs
+/.hypothesis
+/**/.mypy_cache
+/.pytest_cache
+/.tox
+/**/*.egg-info
 /build
-.hypothesis
+/dist
 
 # editor configs
 /.vscode

@@ -1,3 +1,5 @@
+import pytest
+
 from checkio.electronic_station.three_points_circle import checkio
 
 
@@ -9,3 +11,10 @@ def test_checkio():
 def test_fails():
     checkio("(9,8),(9,4),(3,6)")
     checkio("(7,3),(9,6),(3,6)")
+
+
+def test_throws_value_error_when_points_are_in_line():
+    with pytest.raises(ValueError) as exception_info:
+        checkio("(9,8),(9,4),(9,6)")
+
+    assert "Circle cannot be constructed" in str(exception_info.value)

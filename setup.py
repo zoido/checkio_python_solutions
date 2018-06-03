@@ -11,7 +11,7 @@ src_dir = os.path.join(base_dir, "src")
 
 name = "checkio"
 # get version
-version = {}
+version: dict = {}
 with open(os.path.join(src_dir, name, "version.py")) as f:
     exec(f.read(), version)
 
@@ -28,7 +28,7 @@ setup(
     name=name,
     version=version["__version__"],
     keywords="checkio solution python code",
-    description="zoido's checkio sollution",
+    description="zoido's checkio solution",
     long_description=long_description,
     author="Luboš Pokorný",
     license="MIT",
@@ -44,4 +44,4 @@ setup(
     extras_require={
         "test": test_requires,
     },
-    setup_requires=["pytest-runner"], )
+    setup_requires=["pytest-runner"])
