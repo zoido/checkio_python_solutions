@@ -1,5 +1,4 @@
-from checkio.electronic_station.the_longest_palindromic import (
-    longest_palindromic)
+from checkio.electronic_station.the_longest_palindromic import longest_palindromic
 
 
 def test_longest_palindromic():

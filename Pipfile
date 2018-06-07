@@ -7,24 +7,31 @@ name = "pypi"
 
 [packages]
 
-"e1839a8" = {path = ".", editable = true}
 
 
 [dev-packages]
 
-pytest = "*"
+black = "*"
+coveralls = "*"
 "flake8" = "*"
-hypothesis = "*"
-pytest-cov = "*"
 "flake8-builtins" = "*"
-"flake8-commas" = "*"
 "flake8-deprecated" = "*"
 "flake8-import-order" = "*"
+hypothesis = "*"
 mypy = "*"
+pytest = "*"
+pytest-cov = "*"
 tox = "*"
-yapf = "*"
+tox-pipenv = "*"
+tox-travis = "*"
+detox = "*"
 
 
 [requires]
 
 python_version = "3.6"
+
+
+[pipenv]
+
+allow_prereleases = true

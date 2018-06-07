@@ -10,12 +10,8 @@ class Point(NamedTuple):
 
 def parse_points(points_str: str) -> List[Point]:
     single_point_strings = points_str[1:-1].split("),(")
-    coordinates = (point_string.split(",")
-                   for point_string in single_point_strings)
-    return [
-        Point(x=decimal.Decimal(x), y=decimal.Decimal(y))
-        for x, y in coordinates
-    ]
+    coordinates = (point_string.split(",") for point_string in single_point_strings)
+    return [Point(x=decimal.Decimal(x), y=decimal.Decimal(y)) for x, y in coordinates]
 
 
 def get_slope(point_a: Point, point_b: Point) -> decimal.Decimal:
@@ -26,12 +22,12 @@ def get_slope(point_a: Point, point_b: Point) -> decimal.Decimal:
 
 def get_distance(point_a: Point, point_b: Point) -> decimal.Decimal:
     """Returns the distance between two points."""
-    return (((point_b.x - point_a.x)**2) +
-            (((point_b.y - point_a.y)**2))).sqrt()
+    return (((point_b.x - point_a.x) ** 2) + (((point_b.y - point_a.y) ** 2))).sqrt()
 
 
-def find_the_order(point_a: Point, point_b: Point,
-                   point_c: Point) -> Tuple[Point, Point, Point]:
+def find_the_order(
+    point_a: Point, point_b: Point, point_c: Point
+) -> Tuple[Point, Point, Point]:
     """Returns points in the order when slopes of lines are defined."""
     for pa, pb, pc in itertools.permutations([point_a, point_b, point_c]):
         try:
@@ -59,17 +55,20 @@ def checkio(points_str: str) -> str:
     slope_ab = get_slope(point_a, point_b)
     slope_bc = get_slope(point_b, point_c)
 
-    center_x = ((slope_ab * slope_bc * (point_a.y - point_c.y)) +
-                (slope_bc * (point_a.x + point_b.x)) -
-                (slope_ab * (point_b.x + point_c.x))) / (2 *
-                                                         (slope_bc - slope_ab))
+    center_x = (
+        (slope_ab * slope_bc * (point_a.y - point_c.y))
+        + (slope_bc * (point_a.x + point_b.x))
+        - (slope_ab * (point_b.x + point_c.x))
+    ) / (2 * (slope_bc - slope_ab))
     center_y: decimal.Decimal
     try:
-        center_y = ((-1 / slope_bc) * (center_x - (
-            (point_b.x + point_c.x) / 2))) + ((point_b.y + point_c.y) / 2)
+        center_y = ((-1 / slope_bc) * (center_x - ((point_b.x + point_c.x) / 2))) + (
+            (point_b.y + point_c.y) / 2
+        )
     except decimal.DivisionByZero:
-        center_y = ((-1 / slope_ab) * (center_x - (
-            (point_a.x + point_b.x) / 2))) + ((point_a.y + point_b.y) / 2)
+        center_y = ((-1 / slope_ab) * (center_x - ((point_a.x + point_b.x) / 2))) + (
+            (point_a.y + point_b.y) / 2
+        )
 
     center = Point(x=center_x, y=center_y)
     radius = get_distance(point_a, center)
