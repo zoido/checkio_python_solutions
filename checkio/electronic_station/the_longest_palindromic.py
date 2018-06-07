@@ -35,27 +35,25 @@ def _create_lps_table(text: str) -> List[int]:
         else:
             radius = 0
 
-        while (not _boundaries_overflow(i, radius, interlaced_text_length)
-               ) and (interlaced_text[i - radius] == (
-                   interlaced_text[i + radius])):
+        while (not _boundaries_overflow(i, radius, interlaced_text_length)) and (
+            interlaced_text[i - radius] == (interlaced_text[i + radius])
+        ):
             radius += 1
 
         lps_table[i] = radius
 
         current_right_most = i + radius - 1
-        if (current_right_most > right_most):
+        if current_right_most > right_most:
             center = i
             right_most = current_right_most
 
     return lps_table
 
 
-def _get_longest_palindrome_boundaries(
-        lps_table: List[int]) -> Tuple[int, int]:
+def _get_longest_palindrome_boundaries(lps_table: List[int]) -> Tuple[int, int]:
     """Returns real text longest palindrome boundaries based from its lps table.
     """
-    center_index, radius = max(
-        enumerate(lps_table), key=operator.itemgetter(1))
+    center_index, radius = max(enumerate(lps_table), key=operator.itemgetter(1))
 
     start = (center_index - (radius - 1)) // 2
     end = (center_index + radius) // 2

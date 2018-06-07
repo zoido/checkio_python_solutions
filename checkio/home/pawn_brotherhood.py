@@ -28,7 +28,7 @@ def _reachable_coordinates(position: Position) -> Set[Position]:
 def safe_pawns(str_coordinates: Set[str]) -> int:
     coordinates = _to_positions(str_coordinates)
     safe_coordinates = set(
-        itertools.chain.from_iterable(
-            _reachable_coordinates(p) for p in coordinates))
+        itertools.chain.from_iterable(_reachable_coordinates(p) for p in coordinates)
+    )
 
     return len(coordinates & safe_coordinates)

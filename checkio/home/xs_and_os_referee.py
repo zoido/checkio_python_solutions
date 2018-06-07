@@ -13,8 +13,10 @@ def _get_winner(triple: Sequence) -> str:
 
 
 def _get_diagonals(game_result: Sequence) -> List[List]:
-    return [[game_result[0][0], game_result[1][1], game_result[2][2]],
-            [game_result[0][2], game_result[1][1], game_result[2][0]]]
+    return [
+        [game_result[0][0], game_result[1][1], game_result[2][2]],
+        [game_result[0][2], game_result[1][1], game_result[2][0]],
+    ]
 
 
 def checkio(game_result: Sequence[str]) -> str:
@@ -26,7 +28,6 @@ def checkio(game_result: Sequence[str]) -> str:
         _get_winner(diagonal) for diagonal in _get_diagonals(game_result)
     ]
 
-    verdict_set = set(
-        itertools.chain(row_winners, column_winners, diagonal_winners))
+    verdict_set = set(itertools.chain(row_winners, column_winners, diagonal_winners))
 
     return ((list(verdict_set - {"D"})) or "D")[0]
