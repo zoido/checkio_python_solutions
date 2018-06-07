@@ -24,6 +24,7 @@ pytest-cov = "*"
 tox = "*"
 tox-pipenv = "*"
 tox-travis = "*"
+detox = "*"
 
 
 [requires]
