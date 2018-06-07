@@ -1,5 +1,5 @@
 import operator
-from typing import List, Tuple
+from typing import List, Optional, Tuple
 
 BOUNDARY_CHAR = "|"
 
@@ -29,7 +29,7 @@ def _create_lps_table(text: str) -> List[int]:
     lps_table: List[int] = [None] * interlaced_text_length
 
     for i in range(interlaced_text_length):
-        radius: int
+        radius: Optional[int]
         if i < right_most:
             radius = min(lps_table[2 * center - i], right_most - i)
         else:
